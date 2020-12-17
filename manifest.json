@@ -1,0 +1,33 @@
+{
+    "name" : "First Extension",
+    "version" : "1.0.0",
+    "description" : "It's Base Level Extension and It's all about the new created tab counter extention. How many tab you are open in the whole day or all time ? This extension is show to the how many tab you are open.",
+    "manifest_version" : 2,
+    "icons" : {
+        "64" : "myicon.png"
+    },
+
+    "background" : {
+        "scripts" : ["background.js"],
+        "persistent" : false
+    },
+
+    "content_scripts" : [
+        {
+            "js" : ["content.js"],
+            "matches" : [
+                "<all_urls>"
+            ]
+        }
+    ],
+    
+    "browser_action" : {
+        "default_popup" : "popup.html"
+    },
+
+    "permissions" : [
+        "bookmarks",
+        "tabs",
+        "storage"
+    ]
+} 
